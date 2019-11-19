@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-sm-6">
+            <!-- Search form -->
+            <form class="search-form">
+                <mat-form-field class="search-input w-100">
+                    <!-- Input to search the city -->
+                    <input matInput placeholder="Search" type="search" [formControl]="cityName" autocomplete="off">
+                    <button *ngIf="closeButton" mat-button matSuffix mat-icon-button aria-label="Clear" (click)="clearForm()">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </mat-form-field>
+            </form>
+
+            <div *ngIf="isSpinner" class="spinner">
+                <mat-spinner diameter="40"></mat-spinner>
+            </div>
+
+            <!-- Display the city list -->
+            <div class="city-list" *ngIf="filteredData && !isSpinner">
+                <div *ngFor="let city of filteredData" class="city d-flex justify-content-between">
+                    <span>{{city.title}}</span>
+                    <span>{{city.latt_long}}</span>
+                    <button mat-button mat-stroked-button mat-primary color="primary" (click)="openDialog(city.woeid)">View more</button>
+                </div>
+                <div *ngIf="filteredData?.length === 0">No reults found</div>
+            </div>
+        </div>
+    </div>
+</div>

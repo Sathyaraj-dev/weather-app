@@ -1,0 +1,29 @@
+
+.city-list {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
+    .city {
+        border-bottom: 1px solid #ddd;
+        padding: 5px;
+        padding: 5px 10px;
+        align-items: center;
+
+        &:hover {
+            background: #eee;
+        }
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    .more {
+        cursor: pointer;
+    }
+}
+
+.spinner {
+    text-align: -webkit-center;
+    margin: 20px 0;
+}
