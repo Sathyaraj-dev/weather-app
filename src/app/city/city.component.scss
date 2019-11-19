@@ -75,10 +75,9 @@ h2 {
 }
 
 .spinner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px auto;
+    position: absolute;
+    left: 45%;
+    top: 45%;
 }
 
 // Media query for responsive design

@@ -12,9 +12,7 @@ export class WeatherService {
 
   constructor(private http: HttpClient) { }
 
-  /*getWeatherData(param: string) {
-    return this.http.get(this.BASE_URL + `/search?keyword=${param}`);
-  }*/
+  // Services to display the filtered cities
   getWeatherData(param: string) {
     return this.http.get<any>(this.BASE_URL + `/search?keyword=${param}`)
         .pipe(map(res => {
@@ -22,6 +20,7 @@ export class WeatherService {
       }));
   }
 
+  // Services to display the specific city weather data
   getCityData(param: number) {
     return this.http.get(this.BASE_URL + `/location?woeid=${param}`);
   }
